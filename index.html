@@ -48,6 +48,19 @@
       nav a.active { background: #111; color: #fff; border-color: #111; }
       .card { transition: transform .2s ease, box-shadow .2s ease; }
       .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+      /* JS-enhanced effects */
+      html { scroll-behavior: smooth; }
+      .reveal { opacity: 0; transform: translateY(8px); transition: opacity .4s ease, transform .4s ease; }
+      .reveal.show { opacity: 1; transform: none; }
+      nav a { transition: background .2s ease, color .2s ease, border-color .2s ease; }
+      nav a.active { background: #111; color: #fff; border-color: #111; }
+      .card { transition: transform .2s ease, box-shadow .2s ease; }
+      .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+      /* Sketch floaters */
+      #floaters { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 5; }
+      #floaters img { position: absolute; opacity: .9; filter: drop-shadow(0 4px 8px rgba(0,0,0,.08)); }
+      .sketch-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 10px; }
+      #sketchpad { touch-action: none; }
     </style>
   </head>
   <body>
@@ -66,6 +79,7 @@
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
+        <a href="#sketch">Sketch</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -177,6 +191,19 @@
         </div>
       </section>
 
+      <section id="sketch">
+        <h2>Sketch</h2>
+        <div class="card">
+          <div class="sketch-toolbar">
+            <label>Brush size <input type="range" id="brush" min="1" max="30" value="8"></label>
+            <button id="sketch-clear" class="pill">Clear pad</button>
+            <button id="sketch-submit" class="pill">Release drawing</button>
+            <span class="muted" id="sketch-hint">Draw then release to let it float.</span>
+          </div>
+          <canvas id="sketchpad" style="width:100%; height:280px; display:block; border:1px solid var(--line); border-radius:10px; background:#fff;"></canvas>
+        </div>
+      </section>
+
       <section id="contact">
         <h2>Contact</h2>
         <p>Email <a href="mailto:daniel.k.mehta@gmail.com">daniel.k.mehta@gmail.com</a> or message me on <a href="https://linkedin.com/in/dan-mehta" target="_blank" rel="noopener">LinkedIn</a>.</p>
@@ -250,6 +277,111 @@
             if (el) el.scrollIntoView({ behavior: 'smooth' });
           }
         });
+
+        // Floating drawings overlay
+        const overlay = document.createElement('div');
+        overlay.id = 'floaters';
+        document.body.appendChild(overlay);
+
+        let vw = window.innerWidth, vh = window.innerHeight;
+        window.addEventListener('resize', () => { vw = window.innerWidth; vh = window.innerHeight; });
+
+        const floats = [];
+        function addFloater(src) {
+          const img = new Image();
+          img.src = src; img.decoding = 'async'; img.alt = 'User sketch';
+          img.style.willChange = 'transform';
+          overlay.appendChild(img);
+          const w = Math.floor(80 + Math.random()*100);
+          const h = w;
+          let x = Math.random()*(vw - w);
+          let y = Math.random()*(vh - h);
+          let vx = (Math.random()*0.6 + 0.2) * (Math.random() < 0.5 ? -1 : 1);
+          let vy = (Math.random()*0.6 + 0.2) * (Math.random() < 0.5 ? -1 : 1);
+          let r = Math.random()*360;
+          let vr = (Math.random()*0.3 - 0.15);
+          if (prefersReduced) { vx = 0; vy = 0; vr = 0; }
+          const f = { el: img, x, y, w, h, vx, vy, r, vr };
+          floats.push(f);
+          if (floats.length > 16) {
+            const old = floats.shift();
+            if (old && old.el && old.el.parentNode) old.el.parentNode.removeChild(old.el);
+          }
+        }
+
+        function animate(){
+          for (const f of floats) {
+            f.x += f.vx; f.y += f.vy; f.r += f.vr;
+            if (f.x < 0 || f.x > vw - f.w) { f.vx *= -1; f.x = Math.max(0, Math.min(f.x, vw - f.w)); }
+            if (f.y < 0 || f.y > vh - f.h) { f.vy *= -1; f.y = Math.max(0, Math.min(f.y, vh - f.h)); }
+            const t = 'translate(' + f.x + 'px,' + f.y + 'px) rotate(' + f.r + 'deg)';
+            f.el.style.width = f.w + 'px';
+            f.el.style.height = f.h + 'px';
+            f.el.style.transform = t;
+          }
+          requestAnimationFrame(animate);
+        }
+        requestAnimationFrame(animate);
+
+        // Sketchpad
+        const pad = document.getElementById('sketchpad');
+        const btnClear = document.getElementById('sketch-clear');
+        const btnSubmit = document.getElementById('sketch-submit');
+        const brush = document.getElementById('brush');
+        if (pad && btnClear && btnSubmit) {
+          const ctx = pad.getContext('2d');
+          function resizeCanvas(){
+            const dpr = Math.max(1, window.devicePixelRatio || 1);
+            const rect = pad.getBoundingClientRect();
+            pad.width = Math.floor(rect.width * dpr);
+            pad.height = Math.floor(280 * dpr);
+            ctx.setTransform(1,0,0,1,0,0);
+            ctx.scale(dpr, dpr);
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.strokeStyle = '#111';
+          }
+          resizeCanvas();
+          window.addEventListener('resize', resizeCanvas, { passive: true });
+
+          let drawing = false; let last = { x: 0, y: 0 };
+          function pos(e){
+            const rect = pad.getBoundingClientRect();
+            const p = e.touches ? e.touches[0] : e;
+            return { x: p.clientX - rect.left, y: p.clientY - rect.top };
+          }
+          function start(e){ drawing = true; last = pos(e); e.preventDefault(); }
+          function move(e){
+            if (!drawing) return;
+            const p = pos(e);
+            ctx.lineWidth = Number(brush && brush.value || 8);
+            ctx.beginPath(); ctx.moveTo(last.x, last.y); ctx.lineTo(p.x, p.y); ctx.stroke();
+            last = p; e.preventDefault();
+          }
+          function end(e){ drawing = false; e.preventDefault(); }
+
+          pad.addEventListener('pointerdown', start);
+          pad.addEventListener('pointermove', move);
+          pad.addEventListener('pointerup', end);
+          pad.addEventListener('pointerleave', end);
+          pad.addEventListener('pointercancel', end);
+
+          btnClear.addEventListener('click', () => ctx.clearRect(0,0,pad.width, pad.height));
+          btnSubmit.addEventListener('click', () => {
+            // Downscale to about 200px wide
+            const display = pad.getBoundingClientRect();
+            const outW = 200;
+            const ratio = outW / display.width;
+            const outH = Math.max(100, Math.round(display.height * ratio));
+            const out = document.createElement('canvas');
+            out.width = outW; out.height = outH;
+            const octx = out.getContext('2d');
+            octx.fillStyle = '#fff'; octx.fillRect(0,0,outW,outH);
+            octx.drawImage(pad, 0, 0, outW, outH);
+            addFloater(out.toDataURL('image/png'));
+            ctx.clearRect(0,0,pad.width, pad.height);
+          });
+        }
       })();
     </script>
   </body>
