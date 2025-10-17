@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daniel Mehta — ML Engineer</title>
+    <meta name="description" content="Resume-style portfolio. Projects, experience, skills, and contact for Daniel Mehta." />
+    <link rel="icon" href="data:," />
+    <style>
+      :root {
+        --mx: 980px;
+        --fg: #111;
+        --muted: #666;
+        --line: #eaeaea;
+        --bg: #fff;
+        --chip: #f5f7fb;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+      a { color: inherit; text-decoration: underline; }
+      header { max-width: var(--mx); margin: 0 auto; padding: 48px 20px 12px; }
+      h1 { font-size: 36px; letter-spacing: -0.02em; margin: 0 0 6px; }
+      .tag { color: var(--muted); margin: 0 0 10px; }
+      nav { display: flex; flex-wrap: wrap; gap: 14px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 10px 0; }
+      nav a { text-decoration: none; color: #333; padding: 6px 10px; border-radius: 8px; background: #fafafa; border: 1px solid var(--line); }
+      main { max-width: var(--mx); margin: 0 auto; padding: 20px; }
+      section { padding: 18px 0 8px; }
+      h2 { font-size: 20px; letter-spacing: -0.01em; margin: 0 0 8px; }
+      .grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+      @media (min-width: 800px) { .grid { grid-template-columns: 1fr 1fr; } }
+      .card { border: 1px solid var(--line); border-radius: 14px; padding: 14px; background: #fff; }
+      .row { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+      .when { color: var(--muted); font-size: 14px; white-space: nowrap; }
+      ul { margin: 8px 0 0 18px; }
+      .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+      .chip { background: var(--chip); border: 1px solid var(--line); padding: 6px 10px; border-radius: 999px; font-size: 14px; }
+      .contact { display: flex; flex-wrap: wrap; gap: 12px; color: var(--muted); }
+      footer { max-width: var(--mx); margin: 0 auto; padding: 30px 20px 50px; color: var(--muted); }
+      .muted { color: var(--muted); }
+      .pill { display: inline-block; font-size: 12px; padding: 2px 8px; border: 1px solid var(--line); border-radius: 999px; background: #fafafa; }
+      .cta { display: inline-block; padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; background: #111; color: white; text-decoration: none; }
+      .stack { font-size: 14px; color: var(--muted); }
+      /* JS-enhanced effects */
+      html { scroll-behavior: smooth; }
+      .reveal { opacity: 0; transform: translateY(8px); transition: opacity .4s ease, transform .4s ease; }
+      .reveal.show { opacity: 1; transform: none; }
+      nav a { transition: background .2s ease, color .2s ease, border-color .2s ease; }
+      nav a.active { background: #111; color: #fff; border-color: #111; }
+      .card { transition: transform .2s ease, box-shadow .2s ease; }
+      .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Daniel Mehta</h1>
+      <p class="tag">Machine Learning Engineer - Toronto</p>
+      <div class="contact">
+        <a href="mailto:daniel.k.mehta@gmail.com">daniel.k.mehta@gmail.com</a>
+        <span>•</span>
+        <a href="https://linkedin.com/in/dan-mehta" target="_blank" rel="noopener">LinkedIn</a>
+        <span>•</span>
+        <a href="https://github.com/daniel-mehta" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="projects">
+        <h2>Featured projects</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="row"><strong>LLM + GNN Renewable Energy Pipeline</strong><span class="when">2025</span></div>
+            <p class="stack">MoFlow, DimeNet++, Python</p>
+            <ul>
+              <li>Built molecular generation and property prediction workflow with LLM assistance.</li>
+              <li>Automated PDF-to-CSV agent flow with Playwright for multi-method submissions.</li>
+            </ul>
+            <p><a href="https://oraclelens.com/home" target="_blank" rel="noopener">Project overview</a></p>
+          </article>
+
+          <article class="card">
+            <div class="row"><strong>Nostrade Engine - Context-Aware Anime Recommender</strong><span class="when">ongoing</span></div>
+            <p class="stack">Python, PyTorch, Streamlit - SASRec</p>
+            <ul>
+              <li>Sequential recommender with feedback embeddings and explainable outputs.</li>
+            </ul>
+            <p><a href="https://github.com/daniel-mehta/Context-Aware-Anime-Recommender" target="_blank" rel="noopener">Repository</a></p>
+          </article>
+
+          <article class="card">
+            <div class="row"><strong>CooperLM-354M - Custom GPT-2 Language Model</strong><span class="when">2025</span></div>
+            <p class="stack">Python, Hugging Face</p>
+            <ul>
+              <li>Trained 354M parameter model on curated corpora for downstream integration.</li>
+            </ul>
+            <p><a href="https://huggingface.co/mehta/CooperLM-354M" target="_blank" rel="noopener">Model card</a></p>
+          </article>
+
+          <article class="card">
+            <div class="row"><strong>Salary Predictor - Multi-language ML pipeline</strong><span class="when">2024</span></div>
+            <p class="stack">Julia, Go, Python, SQL</p>
+            <ul>
+              <li>Cross-language training plus Go web UI with automated ETL and SQLite.</li>
+            </ul>
+            <p><a href="https://github.com/daniel-mehta/Salary-Predictor" target="_blank" rel="noopener">Repository</a></p>
+          </article>
+
+          <article class="card">
+            <div class="row"><strong>BNART - Q-learning for Urban Traffic</strong><span class="when">2024</span></div>
+            <p class="stack">Python, RL</p>
+            <ul>
+              <li>Custom Q-learning to improve pathfinding and signal timing across 500-plus scenarios.</li>
+            </ul>
+            <p><a href="https://github.com/daniel-mehta/Traffic-Management-Q-Learning" target="_blank" rel="noopener">Repository</a></p>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+        <article class="card">
+          <div class="row"><strong>Data Analyst Intern - Ontario Ministry of Education</strong><span class="when">May 2024 - Aug 2024 • Toronto</span></div>
+          <ul>
+            <li>Optimized SQL and VBA performance which improved data retrieval speed and responsiveness.</li>
+            <li>Redesigned UIs via UX testing and Figma which improved stakeholder satisfaction significantly.</li>
+            <li>Shipped on time through Agile collaboration across teams.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="row"><strong>Database Intern - DPCDSB</strong><span class="when">May 2023 - Aug 2023 • Mississauga</span></div>
+          <ul>
+            <li>Built inventory system for 150-plus buildings to streamline operations.</li>
+            <li>Improved performance using eBase zero-code database with better integration.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="row"><strong>Data Research Specialist - Meter</strong><span class="when">Aug 2020 - Jan 2021 • Remote</span></div>
+          <ul>
+            <li>Improved database quality and engagement through targeted lead research and validation.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <div class="chips">
+          <span class="chip">Python</span>
+          <span class="chip">PyTorch</span>
+          <span class="chip">TensorFlow</span>
+          <span class="chip">Hugging Face</span>
+          <span class="chip">LangChain</span>
+          <span class="chip">FastAPI</span>
+          <span class="chip">AWS SageMaker</span>
+          <span class="chip">SQL</span>
+          <span class="chip">PySpark</span>
+          <span class="chip">Tableau</span>
+          <span class="chip">React</span>
+          <span class="chip">Unreal Engine 5</span>
+        </div>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+        <div class="card">
+          <div class="row"><strong>Graduate Certificate - AI with Machine Learning, Humber Polytechnic</strong><span class="when">Jan 2025 - Aug 2025 • Toronto</span></div>
+          <p class="muted">Dean's Honour Roll</p>
+        </div>
+        <div class="card">
+          <div class="row"><strong>BSc - Wilfrid Laurier University</strong><span class="when">2020 - 2024 • Waterloo</span></div>
+          <p class="muted">Dean's Honour Roll 2021-2024</p>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Email <a href="mailto:daniel.k.mehta@gmail.com">daniel.k.mehta@gmail.com</a> or message me on <a href="https://linkedin.com/in/dan-mehta" target="_blank" rel="noopener">LinkedIn</a>.</p>
+      </section>
+
+      
+
+    </main>
+
+    <footer>
+      <p>© <span id="y"></span> Daniel Mehta • Minimal resume-style site</p>
+    </footer>
+
+    <script>
+      (function(){
+        // Year stamp
+        const y = document.getElementById('y');
+        if (y) y.textContent = new Date().getFullYear();
+
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Reveal on scroll
+        const toReveal = Array.from(document.querySelectorAll('article.card, section h2'));
+        if (!prefersReduced && 'IntersectionObserver' in window) {
+          toReveal.forEach(el => el.classList.add('reveal'));
+          const io = new IntersectionObserver((entries, obs) => {
+            entries.forEach(e => {
+              if (e.isIntersecting) { e.target.classList.add('show'); obs.unobserve(e.target); }
+            });
+          }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+          toReveal.forEach(el => io.observe(el));
+        }
+
+        // Active nav highlight
+        const sections = Array.from(document.querySelectorAll('main section'));
+        const links = Array.from(document.querySelectorAll('nav a'));
+        const linkFor = id => links.find(a => a.getAttribute('href') === '#' + id);
+        if ('IntersectionObserver' in window) {
+          const navIO = new IntersectionObserver((entries) => {
+            entries.forEach(ent => {
+              const link = linkFor(ent.target.id);
+              if (!link) return;
+              if (ent.isIntersecting) {
+                links.forEach(a => a.classList.remove('active'));
+                link.classList.add('active');
+              }
+            });
+          }, { rootMargin: '-40% 0px -50% 0px', threshold: 0.01 });
+          sections.forEach(s => navIO.observe(s));
+        }
+
+        // Smooth scroll fallback for nav clicks
+        const nav = document.querySelector('nav');
+        if (nav) nav.addEventListener('click', (e) => {
+          const a = e.target.closest('a[href^="#"]');
+          if (!a) return;
+          const id = a.getAttribute('href').slice(1);
+          const el = document.getElementById(id);
+          if (!el) return;
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // Shortcut: g then p jumps to Projects
+        let lastKey = 0;
+        window.addEventListener('keydown', (e) => {
+          const k = e.key.toLowerCase();
+          if (k === 'g') lastKey = Date.now();
+          if (k === 'p' && Date.now() - lastKey < 800) {
+            const el = document.getElementById('projects');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
