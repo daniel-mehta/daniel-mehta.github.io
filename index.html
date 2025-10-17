@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Daniel Mehta — ML Engineer</title>
+    <title>Daniel Mehta - ML Engineer</title>
     <meta name="description" content="Resume-style portfolio. Projects, experience, skills, and contact for Daniel Mehta." />
     <link rel="icon" href="data:," />
     <style>
       :root {
         --mx: 980px;
         --fg: #111;
-        --muted: #666;
+        --muted: #333;
         --line: #eaeaea;
         --bg: #fff;
         --chip: #f5f7fb;
@@ -28,19 +28,18 @@
       h2 { font-size: 20px; letter-spacing: -0.01em; margin: 0 0 8px; }
       .grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
       @media (min-width: 800px) { .grid { grid-template-columns: 1fr 1fr; } }
-      .card { border: 1px solid var(--line); border-radius: 14px; padding: 14px; background: #fff; }
+      .card { border: 1px solid var(--line); border-radius: 14px; padding: 14px; background: var(--bg); }
       .row { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
       .when { color: var(--muted); font-size: 14px; white-space: nowrap; }
       ul { margin: 8px 0 0 18px; }
       .chips { display: flex; flex-wrap: wrap; gap: 8px; }
       .chip { background: var(--chip); border: 1px solid var(--line); padding: 6px 10px; border-radius: 999px; font-size: 14px; }
       .contact { display: flex; flex-wrap: wrap; gap: 12px; color: var(--muted); }
-      footer { max-width: var(--mx); margin: 0 auto; padding: 30px 20px 50px; color: var(--muted); }
       .muted { color: var(--muted); }
       .pill { display: inline-block; font-size: 12px; padding: 2px 8px; border: 1px solid var(--line); border-radius: 999px; background: #fafafa; }
-      .cta { display: inline-block; padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; background: #111; color: white; text-decoration: none; }
       .stack { font-size: 14px; color: var(--muted); }
-      /* JS-enhanced effects */
+
+      /* Effects */
       html { scroll-behavior: smooth; }
       .reveal { opacity: 0; transform: translateY(8px); transition: opacity .4s ease, transform .4s ease; }
       .reveal.show { opacity: 1; transform: none; }
@@ -48,19 +47,29 @@
       nav a.active { background: #111; color: #fff; border-color: #111; }
       .card { transition: transform .2s ease, box-shadow .2s ease; }
       .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.06); }
-      /* JS-enhanced effects */
-      html { scroll-behavior: smooth; }
-      .reveal { opacity: 0; transform: translateY(8px); transition: opacity .4s ease, transform .4s ease; }
-      .reveal.show { opacity: 1; transform: none; }
-      nav a { transition: background .2s ease, color .2s ease, border-color .2s ease; }
-      nav a.active { background: #111; color: #fff; border-color: #111; }
-      .card { transition: transform .2s ease, box-shadow .2s ease; }
-      .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+
       /* Sketch floaters */
       #floaters { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 5; }
       #floaters img { position: absolute; opacity: .9; filter: drop-shadow(0 4px 8px rgba(0,0,0,.08)); }
       .sketch-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 10px; }
       #sketchpad { touch-action: none; }
+
+      /* Places map */
+      #visited-map { height: 340px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+
+      /* Theme toggle */
+      .theme-toggle { margin-top: 10px; margin-left: 8px; cursor: pointer; }
+      [data-theme="dark"] {
+        --fg: #e9e9e9;
+        --bg: #111;
+        --muted: #aaa;
+        --line: #2a2a2a;
+        --chip: #1a1a1a;
+      }
+      [data-theme="dark"] nav a { background: #171717; border-color: var(--line); color: var(--fg); }
+      [data-theme="dark"] nav a.active { background: #e9e9e9; color: #111; border-color: #e9e9e9; }
+      [data-theme="dark"] .card { background: var(--bg); }
+      [data-theme="dark"] #visited-map { background: #0f0f0f; border-color: var(--line); }
     </style>
   </head>
   <body>
@@ -79,9 +88,11 @@
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
+        <a href="#places">Places</a>
         <a href="#sketch">Sketch</a>
         <a href="#contact">Contact</a>
       </nav>
+      <button id="theme-toggle" class="pill theme-toggle" aria-label="Toggle dark mode">Dark</button>
     </header>
 
     <main>
@@ -99,7 +110,7 @@
           </article>
 
           <article class="card">
-            <div class="row"><strong>Nostrade Engine - Context-Aware Anime Recommender</strong><span class="when">ongoing</span></div>
+            <div class="row"><strong>Context-Aware Anime Recommender</strong><span class="when">2025</span></div>
             <p class="stack">Python, PyTorch, Streamlit - SASRec</p>
             <ul>
               <li>Sequential recommender with feedback embeddings and explainable outputs.</li>
@@ -191,6 +202,17 @@
         </div>
       </section>
 
+      <section id="places">
+        <h2>Places</h2>
+        <div class="card">
+          <p class="muted">Highlighted countries I have visited. Count: 16.</p>
+          <div id="visited-map" aria-label="Visited countries map"></div>
+          <details class="muted" style="margin-top:8px;"><summary>List</summary>
+            <p>Portugal (Azores), France, Germany, Iceland, Italy, Malta, Spain, Vatican City, Canada, United States, Mexico, Aruba, Bahamas, Barbados, Belize, Dominican Republic</p>
+          </details>
+        </div>
+      </section>
+
       <section id="sketch">
         <h2>Sketch</h2>
         <div class="card">
@@ -209,19 +231,28 @@
         <p>Email <a href="mailto:daniel.k.mehta@gmail.com">daniel.k.mehta@gmail.com</a> or message me on <a href="https://linkedin.com/in/dan-mehta" target="_blank" rel="noopener">LinkedIn</a>.</p>
       </section>
 
-      
-
     </main>
-
-    <footer>
-      <p>© <span id="y"></span> Daniel Mehta • Minimal resume-style site</p>
-    </footer>
 
     <script>
       (function(){
-        // Year stamp
-        const y = document.getElementById('y');
-        if (y) y.textContent = new Date().getFullYear();
+        // Theme setup
+        const root = document.documentElement;
+        const themeBtn = document.getElementById('theme-toggle');
+        const storedTheme = localStorage.getItem('theme');
+        const sysDark = window.matchMedia('(prefers-color-scheme: dark)');
+        function applyTheme(t){
+          if (t === 'dark') root.setAttribute('data-theme','dark'); else root.removeAttribute('data-theme');
+          localStorage.setItem('theme', t);
+          if (themeBtn) themeBtn.textContent = t === 'dark' ? 'Light' : 'Dark';
+          // Rebuild map to apply theme-specific styles
+          if (window.worldMap) rebuildMap();
+        }
+        applyTheme(storedTheme || (sysDark.matches ? 'dark' : 'light'));
+        sysDark.addEventListener('change', (e)=>{ if (!storedTheme) applyTheme(e.matches ? 'dark' : 'light'); });
+        if (themeBtn) themeBtn.addEventListener('click', ()=>{
+          const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          applyTheme(next);
+        });
 
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -230,9 +261,7 @@
         if (!prefersReduced && 'IntersectionObserver' in window) {
           toReveal.forEach(el => el.classList.add('reveal'));
           const io = new IntersectionObserver((entries, obs) => {
-            entries.forEach(e => {
-              if (e.isIntersecting) { e.target.classList.add('show'); obs.unobserve(e.target); }
-            });
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); obs.unobserve(e.target); } });
           }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
           toReveal.forEach(el => io.observe(el));
         }
@@ -246,10 +275,7 @@
             entries.forEach(ent => {
               const link = linkFor(ent.target.id);
               if (!link) return;
-              if (ent.isIntersecting) {
-                links.forEach(a => a.classList.remove('active'));
-                link.classList.add('active');
-              }
+              if (ent.isIntersecting) { links.forEach(a => a.classList.remove('active')); link.classList.add('active'); }
             });
           }, { rootMargin: '-40% 0px -50% 0px', threshold: 0.01 });
           sections.forEach(s => navIO.observe(s));
@@ -272,52 +298,35 @@
         window.addEventListener('keydown', (e) => {
           const k = e.key.toLowerCase();
           if (k === 'g') lastKey = Date.now();
-          if (k === 'p' && Date.now() - lastKey < 800) {
-            const el = document.getElementById('projects');
-            if (el) el.scrollIntoView({ behavior: 'smooth' });
-          }
+          if (k === 'p' && Date.now() - lastKey < 800) { const el = document.getElementById('projects'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }
         });
 
         // Floating drawings overlay
         const overlay = document.createElement('div');
         overlay.id = 'floaters';
         document.body.appendChild(overlay);
-
         let vw = window.innerWidth, vh = window.innerHeight;
         window.addEventListener('resize', () => { vw = window.innerWidth; vh = window.innerHeight; });
-
         const floats = [];
         function addFloater(src) {
-          const img = new Image();
-          img.src = src; img.decoding = 'async'; img.alt = 'User sketch';
-          img.style.willChange = 'transform';
+          const img = new Image(); img.src = src; img.decoding = 'async'; img.alt = 'User sketch'; img.style.willChange = 'transform';
           overlay.appendChild(img);
-          const w = Math.floor(80 + Math.random()*100);
-          const h = w;
-          let x = Math.random()*(vw - w);
-          let y = Math.random()*(vh - h);
+          const w = Math.floor(80 + Math.random()*100); const h = w;
+          let x = Math.random()*(vw - w); let y = Math.random()*(vh - h);
           let vx = (Math.random()*0.6 + 0.2) * (Math.random() < 0.5 ? -1 : 1);
           let vy = (Math.random()*0.6 + 0.2) * (Math.random() < 0.5 ? -1 : 1);
-          let r = Math.random()*360;
-          let vr = (Math.random()*0.3 - 0.15);
+          let r = Math.random()*360; let vr = (Math.random()*0.3 - 0.15);
           if (prefersReduced) { vx = 0; vy = 0; vr = 0; }
           const f = { el: img, x, y, w, h, vx, vy, r, vr };
           floats.push(f);
-          if (floats.length > 16) {
-            const old = floats.shift();
-            if (old && old.el && old.el.parentNode) old.el.parentNode.removeChild(old.el);
-          }
+          if (floats.length > 16) { const old = floats.shift(); if (old && old.el && old.el.parentNode) old.el.parentNode.removeChild(old.el); }
         }
-
         function animate(){
           for (const f of floats) {
             f.x += f.vx; f.y += f.vy; f.r += f.vr;
             if (f.x < 0 || f.x > vw - f.w) { f.vx *= -1; f.x = Math.max(0, Math.min(f.x, vw - f.w)); }
             if (f.y < 0 || f.y > vh - f.h) { f.vy *= -1; f.y = Math.max(0, Math.min(f.y, vh - f.h)); }
-            const t = 'translate(' + f.x + 'px,' + f.y + 'px) rotate(' + f.r + 'deg)';
-            f.el.style.width = f.w + 'px';
-            f.el.style.height = f.h + 'px';
-            f.el.style.transform = t;
+            f.el.style.width = f.w + 'px'; f.el.style.height = f.h + 'px'; f.el.style.transform = 'translate(' + f.x + 'px,' + f.y + 'px) rotate(' + f.r + 'deg)';
           }
           requestAnimationFrame(animate);
         }
@@ -335,53 +344,102 @@
             const rect = pad.getBoundingClientRect();
             pad.width = Math.floor(rect.width * dpr);
             pad.height = Math.floor(280 * dpr);
-            ctx.setTransform(1,0,0,1,0,0);
-            ctx.scale(dpr, dpr);
-            ctx.lineCap = 'round';
-            ctx.lineJoin = 'round';
-            ctx.strokeStyle = '#111';
+            ctx.setTransform(1,0,0,1,0,0); ctx.scale(dpr, dpr);
+            ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--fg').trim() || '#111';
           }
-          resizeCanvas();
-          window.addEventListener('resize', resizeCanvas, { passive: true });
-
+          resizeCanvas(); window.addEventListener('resize', resizeCanvas, { passive: true });
           let drawing = false; let last = { x: 0, y: 0 };
-          function pos(e){
-            const rect = pad.getBoundingClientRect();
-            const p = e.touches ? e.touches[0] : e;
-            return { x: p.clientX - rect.left, y: p.clientY - rect.top };
-          }
+          function pos(e){ const rect = pad.getBoundingClientRect(); const p = e.touches ? e.touches[0] : e; return { x: p.clientX - rect.left, y: p.clientY - rect.top }; }
           function start(e){ drawing = true; last = pos(e); e.preventDefault(); }
-          function move(e){
-            if (!drawing) return;
-            const p = pos(e);
-            ctx.lineWidth = Number(brush && brush.value || 8);
-            ctx.beginPath(); ctx.moveTo(last.x, last.y); ctx.lineTo(p.x, p.y); ctx.stroke();
-            last = p; e.preventDefault();
-          }
+          function move(e){ if (!drawing) return; const p = pos(e); ctx.lineWidth = Number(brush && brush.value || 8); ctx.beginPath(); ctx.moveTo(last.x, last.y); ctx.lineTo(p.x, p.y); ctx.stroke(); last = p; e.preventDefault(); }
           function end(e){ drawing = false; e.preventDefault(); }
-
-          pad.addEventListener('pointerdown', start);
-          pad.addEventListener('pointermove', move);
-          pad.addEventListener('pointerup', end);
-          pad.addEventListener('pointerleave', end);
-          pad.addEventListener('pointercancel', end);
-
+          pad.addEventListener('pointerdown', start); pad.addEventListener('pointermove', move); pad.addEventListener('pointerup', end); pad.addEventListener('pointerleave', end); pad.addEventListener('pointercancel', end);
           btnClear.addEventListener('click', () => ctx.clearRect(0,0,pad.width, pad.height));
           btnSubmit.addEventListener('click', () => {
-            // Downscale to about 200px wide
-            const display = pad.getBoundingClientRect();
-            const outW = 200;
-            const ratio = outW / display.width;
-            const outH = Math.max(100, Math.round(display.height * ratio));
-            const out = document.createElement('canvas');
-            out.width = outW; out.height = outH;
-            const octx = out.getContext('2d');
-            octx.fillStyle = '#fff'; octx.fillRect(0,0,outW,outH);
-            octx.drawImage(pad, 0, 0, outW, outH);
-            addFloater(out.toDataURL('image/png'));
-            ctx.clearRect(0,0,pad.width, pad.height);
+            const display = pad.getBoundingClientRect(); const outW = 200; const ratio = outW / display.width; const outH = Math.max(100, Math.round(display.height * ratio));
+            const out = document.createElement('canvas'); out.width = outW; out.height = outH; const octx = out.getContext('2d');
+            octx.fillStyle = '#fff'; octx.fillRect(0,0,outW,outH); octx.drawImage(pad, 0, 0, outW, outH);
+            addFloater(out.toDataURL('image/png')); ctx.clearRect(0,0,pad.width, pad.height);
           });
         }
+
+        // Places map
+        const visitedCodes = ['PT','FR','DE','IS','IT','MT','ES','VA','CA','US','MX','AW','BS','BB','BZ','DO'];
+        let mapReady = false; window.worldMap = null;
+        function loadCSS(href){ return new Promise((res)=>{ const l=document.createElement('link'); l.rel='stylesheet'; l.href=href; l.onload=res; document.head.appendChild(l); if (l.sheet) res(); }); }
+        function loadScript(src){ return new Promise((res, rej)=>{ const s=document.createElement('script'); s.src=src; s.onload=res; s.onerror=rej; document.head.appendChild(s); }); }
+
+        function mapStylesFor(theme){
+          const isDark = theme === 'dark';
+          return {
+            regionStyle: {
+              initial: { fill: isDark ? '#2a2a2a' : '#e6e6e6' },
+              hovered: { fill: isDark ? '#3a3a3a' : '#c6c6c6' },
+              selected: { fill: isDark ? '#e9e9e9' : '#111' }
+            },
+            markersStyle: { initial: { r: 5, fill: isDark ? '#e9e9e9' : '#111', stroke: isDark ? '#111' : '#ffffff', 'stroke-width': 1 } }
+          };
+        }
+
+        async function buildMap(){
+          const container = document.getElementById('visited-map');
+          if (!container) return;
+          await loadCSS('https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css');
+          await loadScript('https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3');
+          await loadScript('https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/maps/world.js');
+          if (!window.jsVectorMap) return;
+          const theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+          const styles = mapStylesFor(theme);
+          // eslint-disable-next-line no-undef
+          window.worldMap = new jsVectorMap({
+            selector: '#visited-map',
+            map: 'world',
+            zoomButtons: true,
+            zoomOnScroll: true,
+            zoomMax: 12,
+            zoomAnimate: true,
+            draggable: true,
+            ...styles,
+            selectedRegions: visitedCodes,
+            markers: [
+              { name: 'Malta', coords: [35.9375, 14.3754] },
+              { name: 'Vatican City', coords: [41.9029, 12.4534] }
+            ]
+          });
+          // Focus Malta so it is visible
+          try { window.worldMap.setFocus({ coordinates: [35.9375, 14.3754], scale: 5, animate: true }); } catch(_) {}
+        }
+
+        function destroyMap(){
+          const container = document.getElementById('visited-map');
+          if (container) container.innerHTML = '';
+          window.worldMap = null;
+        }
+
+        async function initMap(){
+          if (mapReady) return; mapReady = true; await buildMap();
+        }
+
+        async function rebuildMap(){
+          if (!mapReady) return;
+          destroyMap();
+          await buildMap();
+        }
+
+        // Lazy init when Places enters view
+        const places = document.getElementById('places');
+        if ('IntersectionObserver' in window && places) {
+          const once = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { initMap(); once.disconnect(); } });
+          }, { rootMargin: '0px 0px -20% 0px', threshold: 0.1 });
+          once.observe(places);
+        } else {
+          initMap();
+        }
+
+        // --- Self-checks to catch regressions ---
+        console.assert(typeof rebuildMap === 'function', 'rebuildMap should be defined');
+        console.assert(Array.isArray(visitedCodes) && visitedCodes.includes('MT'), 'visitedCodes must include Malta');
       })();
     </script>
   </body>
