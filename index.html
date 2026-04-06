@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Daniel Mehta - ML Engineer</title>
-    <meta name="description" content="Resume-style portfolio. Projects, experience, skills, and contact for Daniel Mehta." />
+    <title>Daniel Mehta - Applied AI Engineer</title>
+    <meta name="description" content="Portfolio for Daniel Mehta. Applied AI engineer focused on LLM systems, APIs, backend development, projects, experience, skills, and contact." />
     <link rel="icon" href="data:," />
     <style>
       :root {
@@ -21,6 +21,7 @@
       header { max-width: var(--mx); margin: 0 auto; padding: 48px 20px 12px; }
       h1 { font-size: 36px; letter-spacing: -0.02em; margin: 0 0 6px; }
       .tag { color: var(--muted); margin: 0 0 10px; }
+      .intro { max-width: 760px; color: var(--muted); margin: 12px 0 0; }
       nav { display: flex; flex-wrap: wrap; gap: 14px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 10px 0; }
       nav a { text-decoration: none; color: #333; padding: 6px 10px; border-radius: 8px; background: #fafafa; border: 1px solid var(--line); }
       main { max-width: var(--mx); margin: 0 auto; padding: 20px; }
@@ -75,7 +76,7 @@
   <body>
     <header>
       <h1>Daniel Mehta</h1>
-      <p class="tag">Machine Learning Engineer - Toronto</p>
+      <p class="tag">Applied AI Engineer • LLM Systems • APIs & Backend • Toronto</p>
       <div class="contact">
         <a href="mailto:daniel.k.mehta@gmail.com">daniel.k.mehta@gmail.com</a>
         <span>•</span>
@@ -83,11 +84,17 @@
         <span>•</span>
         <a href="https://github.com/daniel-mehta" target="_blank" rel="noopener">GitHub</a>
       </div>
+
+      <p class="intro">
+        I build applied AI systems focused on LLM workflows, backend integration, retrieval and memory, and practical machine learning products.
+        My background spans AI engineering, analytics, and full-stack technical work across startups, government, and internal tools.
+      </p>
+
       <nav>
-        <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
         <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
         <a href="#places">Places</a>
         <a href="#sketch">Sketch</a>
         <a href="#contact">Contact</a>
@@ -96,108 +103,51 @@
     </header>
 
     <main>
-      <section id="projects">
-        <h2>Featured projects</h2>
-        <div class="grid">
-          <article class="card">
-            <div class="row"><strong>LLM + GNN Renewable Energy Pipeline</strong><span class="when">2025</span></div>
-            <p class="stack">MoFlow, DimeNet++, Python</p>
-            <ul>
-              <li>Built molecular generation and property prediction workflow with LLM assistance.</li>
-              <li>Automated PDF-to-CSV agent flow with Playwright for multi-method submissions.</li>
-            </ul>
-            <p><a href="https://oraclelens.com/home" target="_blank" rel="noopener">Project overview</a></p>
-          </article>
-
-          <article class="card">
-            <div class="row"><strong>Context-Aware Anime Recommender</strong><span class="when">2025</span></div>
-            <p class="stack">Python, PyTorch, Streamlit - SASRec</p>
-            <ul>
-              <li>Sequential recommender with feedback embeddings and explainable outputs.</li>
-            </ul>
-            <p><a href="https://github.com/daniel-mehta/Context-Aware-Anime-Recommender" target="_blank" rel="noopener">Repository</a></p>
-          </article>
-
-          <article class="card">
-            <div class="row"><strong>CooperLM-354M - Custom GPT-2 Language Model</strong><span class="when">2025</span></div>
-            <p class="stack">Python, Hugging Face</p>
-            <ul>
-              <li>Trained 354M parameter model on curated corpora for downstream integration.</li>
-            </ul>
-            <p><a href="https://huggingface.co/mehta/CooperLM-354M" target="_blank" rel="noopener">Model card</a></p>
-          </article>
-
-          <article class="card">
-            <div class="row"><strong>Salary Predictor - Multi-language ML pipeline</strong><span class="when">2024</span></div>
-            <p class="stack">Julia, Go, Python, SQL</p>
-            <ul>
-              <li>Cross-language training plus Go web UI with automated ETL and SQLite.</li>
-            </ul>
-            <p><a href="https://github.com/daniel-mehta/Salary-Predictor" target="_blank" rel="noopener">Repository</a></p>
-          </article>
-
-          <article class="card">
-            <div class="row"><strong>BNART - Q-learning for Urban Traffic</strong><span class="when">2024</span></div>
-            <p class="stack">Python, RL</p>
-            <ul>
-              <li>Custom Q-learning to improve pathfinding and signal timing across 500-plus scenarios.</li>
-            </ul>
-            <p><a href="https://github.com/daniel-mehta/Traffic-Management-Q-Learning" target="_blank" rel="noopener">Repository</a></p>
-          </article>
-        </div>
-      </section>
-
       <section id="experience">
         <h2>Experience</h2>
         <article class="card">
-          <div class="row"><strong>Full-Stack & AI Engineer Intern - Arrowz</strong><span class="when">Sept 2025 - Present</span></div>
+          <div class="row"><strong>Full-Stack & AI Intern - Arrowz</strong><span class="when">Sept 2025 - Feb 2026 • Remote</span></div>
           <ul>
-            <li>Developing full-stack AI solutions for production environments.</li>
+            <li>Built and integrated a machine learning-based sentiment analysis component for live chat conversations.</li>
+            <li>Designed and shipped a PostgreSQL-based persistent memory system for an LLM application using confidence and salience scoring.</li>
+            <li>Implemented memory processing features including PII filtering, episodic time normalization, semantic deduplication, and usage-based decay.</li>
+            <li>Integrated long-term memory into a live inference pipeline to enable context-aware responses across conversations.</li>
+            <li>Built automated testing and database cleanup workflows to improve system reliability.</li>
+            <li>Added backend authentication/security controls and integrated TTS/STT endpoints for voice-based AI interactions.</li>
           </ul>
         </article>
+
         <article class="card">
           <div class="row"><strong>Data Analyst Intern - Ontario Ministry of Education</strong><span class="when">May 2024 - Aug 2024 • Toronto</span></div>
           <ul>
-            <li>Optimized SQL and VBA performance which improved data retrieval speed and responsiveness.</li>
-            <li>Redesigned UIs via UX testing and Figma which improved stakeholder satisfaction significantly.</li>
-            <li>Shipped on time through Agile collaboration across teams.</li>
+            <li>Optimized SQL- and VBA-based reporting workflows by improving inefficient query logic and data retrieval patterns.</li>
+            <li>Redesigned internal reporting interfaces using UX testing feedback and Figma mockups.</li>
+            <li>Translated policy and reporting requirements into reliable data workflows for operational analysis and decision-making.</li>
           </ul>
         </article>
+
         <article class="card">
           <div class="row"><strong>Database Intern - DPCDSB</strong><span class="when">May 2023 - Aug 2023 • Mississauga</span></div>
           <ul>
-            <li>Built inventory system for 150-plus buildings to streamline operations.</li>
-            <li>Improved performance using eBase zero-code database with better integration.</li>
+            <li>Designed and implemented an inventory management system for mechanical and electrical assets across 150+ buildings.</li>
+            <li>Improved data accessibility and operational reliability using the eBase platform.</li>
+            <li>Performed data validation and asset analysis to support accurate records and long-term facilities planning.</li>
           </ul>
         </article>
+
         <article class="card">
           <div class="row"><strong>Data Research Specialist - Meter</strong><span class="when">Aug 2020 - Jan 2021 • Remote</span></div>
           <ul>
-            <li>Improved database quality and engagement through targeted lead research and validation.</li>
+            <li>Conducted structured lead research and data validation to improve database quality and reliability for sales and engagement workflows.</li>
           </ul>
         </article>
-      </section>
-
-      <section id="skills">
-        <h2>Skills</h2>
-        <div class="chips">
-          <span class="chip">Python</span>
-          <span class="chip">PyTorch</span>
-          <span class="chip">TensorFlow</span>
-          <span class="chip">Hugging Face</span>
-          <span class="chip">LangChain</span>
-          <span class="chip">FastAPI</span>
-          <span class="chip">AWS SageMaker</span>
-          <span class="chip">SQL</span>
-          <span class="chip">PySpark</span>
-          <span class="chip">Tableau</span>
-          <span class="chip">React</span>
-          <span class="chip">Unreal Engine 5</span>
-        </div>
       </section>
 
       <section id="education">
         <h2>Education</h2>
+        <div class="card">
+          <div class="row"><strong>MSc Artificial Intelligence - University of Liverpool</strong><span class="when">Starting May 2026 • Expected 2028</span></div>
+        </div>
         <div class="card">
           <div class="row"><strong>Graduate Certificate - AI with Machine Learning, Humber Polytechnic</strong><span class="when">Jan 2025 - Aug 2025 • Toronto</span></div>
           <p class="muted">Dean's Honour Roll</p>
@@ -205,6 +155,84 @@
         <div class="card">
           <div class="row"><strong>BSc - Wilfrid Laurier University</strong><span class="when">2020 - 2024 • Waterloo</span></div>
           <p class="muted">Dean's Honour Roll 2021-2024</p>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <div class="chips">
+          <span class="chip">Python</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">SQL</span>
+          <span class="chip">Go</span>
+          <span class="chip">Julia</span>
+          <span class="chip">PyTorch</span>
+          <span class="chip">Scikit-learn</span>
+          <span class="chip">TensorFlow</span>
+          <span class="chip">Hugging Face</span>
+          <span class="chip">LangChain</span>
+          <span class="chip">LLM Pipelines</span>
+          <span class="chip">Conversational Memory Systems</span>
+          <span class="chip">FastAPI</span>
+          <span class="chip">Flask</span>
+          <span class="chip">REST APIs</span>
+          <span class="chip">AWS</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">MongoDB</span>
+          <span class="chip">Apache Spark</span>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Featured projects</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="row"><strong>LLM + GNN Integration for Renewable Energy</strong><span class="when">2025</span></div>
+            <p class="stack">Python, MoFlow, DimeNet++</p>
+            <ul>
+              <li>Built a molecular innovation pipeline combining LLMs with graph neural networks for molecule generation and property prediction.</li>
+              <li>Led technical implementation across model integration and workflow development in an industry-sponsored capstone.</li>
+            </ul>
+            <p><a href="https://oraclelens.com/home" target="_blank" rel="noopener">Project overview</a></p>
+          </article>
+
+          <article class="card">
+            <div class="row"><strong>Context-Aware Anime Recommender</strong><span class="when">2025</span></div>
+            <p class="stack">Python, PyTorch, Streamlit, SASRec</p>
+            <ul>
+              <li>Implemented a Transformer-based sequential recommender with feedback embeddings and genre-aware blending for personalized recommendation generation.</li>
+              <li>Built an interactive Streamlit demo with explainable recommendation outputs.</li>
+            </ul>
+            <p><a href="https://github.com/daniel-mehta/Context-Aware-Anime-Recommender" target="_blank" rel="noopener">Repository</a></p>
+          </article>
+
+          <article class="card">
+            <div class="row"><strong>CooperLM-354M - Custom GPT-Style Language Model</strong><span class="when">2025</span></div>
+            <p class="stack">Python, Hugging Face</p>
+            <ul>
+              <li>Trained a 354M-parameter GPT-style language model on curated text datasets using the Hugging Face ecosystem.</li>
+              <li>Built and evaluated an end-to-end training pipeline for small-scale autoregressive text generation under limited compute constraints.</li>
+            </ul>
+            <p><a href="https://huggingface.co/mehta/CooperLM-354M" target="_blank" rel="noopener">Model card</a></p>
+          </article>
+
+          <article class="card">
+            <div class="row"><strong>Salary Predictor - Multi-Language ML Pipeline</strong><span class="when">2024</span></div>
+            <p class="stack">Julia, Go, Python, Bash, SQLite</p>
+            <ul>
+              <li>Built a cross-language machine learning pipeline with model training, ETL, and a Go-based web interface.</li>
+            </ul>
+            <p><a href="https://github.com/daniel-mehta/Salary-Predictor" target="_blank" rel="noopener">Repository</a></p>
+          </article>
+
+          <article class="card">
+            <div class="row"><strong>BNART - Q-Learning for Urban Traffic</strong><span class="when">2024</span></div>
+            <p class="stack">Python, Reinforcement Learning</p>
+            <ul>
+              <li>Built a Q-learning traffic optimization project focused on improving routing and signal timing across large simulated scenarios.</li>
+            </ul>
+            <p><a href="https://github.com/daniel-mehta/Traffic-Management-Q-Learning" target="_blank" rel="noopener">Repository</a></p>
+          </article>
         </div>
       </section>
 
@@ -236,12 +264,10 @@
         <h2>Contact</h2>
         <p>Email <a href="mailto:daniel.k.mehta@gmail.com">daniel.k.mehta@gmail.com</a> or message me on <a href="https://linkedin.com/in/dan-mehta" target="_blank" rel="noopener">LinkedIn</a>.</p>
       </section>
-
     </main>
 
     <script>
       (function(){
-        // Theme setup
         const root = document.documentElement;
         const themeBtn = document.getElementById('theme-toggle');
         const storedTheme = localStorage.getItem('theme');
@@ -250,7 +276,6 @@
           if (t === 'dark') root.setAttribute('data-theme','dark'); else root.removeAttribute('data-theme');
           localStorage.setItem('theme', t);
           if (themeBtn) themeBtn.textContent = t === 'dark' ? 'Light' : 'Dark';
-          // Rebuild map to apply theme-specific styles
           if (window.worldMap) rebuildMap();
         }
         applyTheme(storedTheme || (sysDark.matches ? 'dark' : 'light'));
@@ -262,8 +287,7 @@
 
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        // Reveal on scroll
-        const toReveal = Array.from(document.querySelectorAll('article.card, section h2'));
+        const toReveal = Array.from(document.querySelectorAll('article.card, section h2, .intro'));
         if (!prefersReduced && 'IntersectionObserver' in window) {
           toReveal.forEach(el => el.classList.add('reveal'));
           const io = new IntersectionObserver((entries, obs) => {
@@ -272,7 +296,6 @@
           toReveal.forEach(el => io.observe(el));
         }
 
-        // Active nav highlight
         const sections = Array.from(document.querySelectorAll('main section'));
         const links = Array.from(document.querySelectorAll('nav a'));
         const linkFor = id => links.find(a => a.getAttribute('href') === '#' + id);
@@ -287,7 +310,6 @@
           sections.forEach(s => navIO.observe(s));
         }
 
-        // Smooth scroll fallback for nav clicks
         const nav = document.querySelector('nav');
         if (nav) nav.addEventListener('click', (e) => {
           const a = e.target.closest('a[href^="#"]');
@@ -299,15 +321,16 @@
           el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
 
-        // Shortcut: g then p jumps to Projects
         let lastKey = 0;
         window.addEventListener('keydown', (e) => {
           const k = e.key.toLowerCase();
           if (k === 'g') lastKey = Date.now();
-          if (k === 'p' && Date.now() - lastKey < 800) { const el = document.getElementById('projects'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }
+          if (k === 'p' && Date.now() - lastKey < 800) {
+            const el = document.getElementById('projects');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }
         });
 
-        // Floating drawings overlay
         const overlay = document.createElement('div');
         overlay.id = 'floaters';
         document.body.appendChild(overlay);
@@ -315,30 +338,41 @@
         window.addEventListener('resize', () => { vw = window.innerWidth; vh = window.innerHeight; });
         const floats = [];
         function addFloater(src) {
-          const img = new Image(); img.src = src; img.decoding = 'async'; img.alt = 'User sketch'; img.style.willChange = 'transform';
+          const img = new Image();
+          img.src = src;
+          img.decoding = 'async';
+          img.alt = 'User sketch';
+          img.style.willChange = 'transform';
           overlay.appendChild(img);
-          const w = Math.floor(80 + Math.random()*100); const h = w;
-          let x = Math.random()*(vw - w); let y = Math.random()*(vh - h);
+          const w = Math.floor(80 + Math.random()*100);
+          const h = w;
+          let x = Math.random()*(vw - w);
+          let y = Math.random()*(vh - h);
           let vx = (Math.random()*0.6 + 0.2) * (Math.random() < 0.5 ? -1 : 1);
           let vy = (Math.random()*0.6 + 0.2) * (Math.random() < 0.5 ? -1 : 1);
-          let r = Math.random()*360; let vr = (Math.random()*0.3 - 0.15);
+          let r = Math.random()*360;
+          let vr = (Math.random()*0.3 - 0.15);
           if (prefersReduced) { vx = 0; vy = 0; vr = 0; }
           const f = { el: img, x, y, w, h, vx, vy, r, vr };
           floats.push(f);
-          if (floats.length > 16) { const old = floats.shift(); if (old && old.el && old.el.parentNode) old.el.parentNode.removeChild(old.el); }
+          if (floats.length > 16) {
+            const old = floats.shift();
+            if (old && old.el && old.el.parentNode) old.el.parentNode.removeChild(old.el);
+          }
         }
         function animate(){
           for (const f of floats) {
             f.x += f.vx; f.y += f.vy; f.r += f.vr;
             if (f.x < 0 || f.x > vw - f.w) { f.vx *= -1; f.x = Math.max(0, Math.min(f.x, vw - f.w)); }
             if (f.y < 0 || f.y > vh - f.h) { f.vy *= -1; f.y = Math.max(0, Math.min(f.y, vh - f.h)); }
-            f.el.style.width = f.w + 'px'; f.el.style.height = f.h + 'px'; f.el.style.transform = 'translate(' + f.x + 'px,' + f.y + 'px) rotate(' + f.r + 'deg)';
+            f.el.style.width = f.w + 'px';
+            f.el.style.height = f.h + 'px';
+            f.el.style.transform = 'translate(' + f.x + 'px,' + f.y + 'px) rotate(' + f.r + 'deg)';
           }
           requestAnimationFrame(animate);
         }
         requestAnimationFrame(animate);
 
-        // Sketchpad
         const pad = document.getElementById('sketchpad');
         const btnClear = document.getElementById('sketch-clear');
         const btnSubmit = document.getElementById('sketch-submit');
@@ -350,30 +384,81 @@
             const rect = pad.getBoundingClientRect();
             pad.width = Math.floor(rect.width * dpr);
             pad.height = Math.floor(280 * dpr);
-            ctx.setTransform(1,0,0,1,0,0); ctx.scale(dpr, dpr);
-            ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--fg').trim() || '#111';
+            ctx.setTransform(1,0,0,1,0,0);
+            ctx.scale(dpr, dpr);
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--fg').trim() || '#111';
           }
-          resizeCanvas(); window.addEventListener('resize', resizeCanvas, { passive: true });
-          let drawing = false; let last = { x: 0, y: 0 };
-          function pos(e){ const rect = pad.getBoundingClientRect(); const p = e.touches ? e.touches[0] : e; return { x: p.clientX - rect.left, y: p.clientY - rect.top }; }
+          resizeCanvas();
+          window.addEventListener('resize', resizeCanvas, { passive: true });
+          let drawing = false;
+          let last = { x: 0, y: 0 };
+          function pos(e){
+            const rect = pad.getBoundingClientRect();
+            const p = e.touches ? e.touches[0] : e;
+            return { x: p.clientX - rect.left, y: p.clientY - rect.top };
+          }
           function start(e){ drawing = true; last = pos(e); e.preventDefault(); }
-          function move(e){ if (!drawing) return; const p = pos(e); ctx.lineWidth = Number(brush && brush.value || 8); ctx.beginPath(); ctx.moveTo(last.x, last.y); ctx.lineTo(p.x, p.y); ctx.stroke(); last = p; e.preventDefault(); }
+          function move(e){
+            if (!drawing) return;
+            const p = pos(e);
+            ctx.lineWidth = Number(brush && brush.value || 8);
+            ctx.beginPath();
+            ctx.moveTo(last.x, last.y);
+            ctx.lineTo(p.x, p.y);
+            ctx.stroke();
+            last = p;
+            e.preventDefault();
+          }
           function end(e){ drawing = false; e.preventDefault(); }
-          pad.addEventListener('pointerdown', start); pad.addEventListener('pointermove', move); pad.addEventListener('pointerup', end); pad.addEventListener('pointerleave', end); pad.addEventListener('pointercancel', end);
+          pad.addEventListener('pointerdown', start);
+          pad.addEventListener('pointermove', move);
+          pad.addEventListener('pointerup', end);
+          pad.addEventListener('pointerleave', end);
+          pad.addEventListener('pointercancel', end);
           btnClear.addEventListener('click', () => ctx.clearRect(0,0,pad.width, pad.height));
           btnSubmit.addEventListener('click', () => {
-            const display = pad.getBoundingClientRect(); const outW = 200; const ratio = outW / display.width; const outH = Math.max(100, Math.round(display.height * ratio));
-            const out = document.createElement('canvas'); out.width = outW; out.height = outH; const octx = out.getContext('2d');
-            octx.fillStyle = '#fff'; octx.fillRect(0,0,outW,outH); octx.drawImage(pad, 0, 0, outW, outH);
-            addFloater(out.toDataURL('image/png')); ctx.clearRect(0,0,pad.width, pad.height);
+            const display = pad.getBoundingClientRect();
+            const outW = 200;
+            const ratio = outW / display.width;
+            const outH = Math.max(100, Math.round(display.height * ratio));
+            const out = document.createElement('canvas');
+            out.width = outW;
+            out.height = outH;
+            const octx = out.getContext('2d');
+            octx.fillStyle = '#fff';
+            octx.fillRect(0,0,outW,outH);
+            octx.drawImage(pad, 0, 0, outW, outH);
+            addFloater(out.toDataURL('image/png'));
+            ctx.clearRect(0,0,pad.width, pad.height);
           });
         }
 
-        // Places map
         const visitedCodes = ['PT','FR','DE','IS','IT','MT','ES','VA','CA','US','MX','AW','BS','BB','BZ','DO'];
-        let mapReady = false; window.worldMap = null;
-        function loadCSS(href){ return new Promise((res)=>{ const l=document.createElement('link'); l.rel='stylesheet'; l.href=href; l.onload=res; document.head.appendChild(l); if (l.sheet) res(); }); }
-        function loadScript(src){ return new Promise((res, rej)=>{ const s=document.createElement('script'); s.src=src; s.onload=res; s.onerror=rej; document.head.appendChild(s); }); }
+        let mapReady = false;
+        window.worldMap = null;
+
+        function loadCSS(href){
+          return new Promise((res)=>{
+            const l=document.createElement('link');
+            l.rel='stylesheet';
+            l.href=href;
+            l.onload=res;
+            document.head.appendChild(l);
+            if (l.sheet) res();
+          });
+        }
+
+        function loadScript(src){
+          return new Promise((res, rej)=>{
+            const s=document.createElement('script');
+            s.src=src;
+            s.onload=res;
+            s.onerror=rej;
+            document.head.appendChild(s);
+          });
+        }
 
         function mapStylesFor(theme){
           const isDark = theme === 'dark';
@@ -383,7 +468,9 @@
               hovered: { fill: isDark ? '#3a3a3a' : '#c6c6c6' },
               selected: { fill: isDark ? '#e9e9e9' : '#111' }
             },
-            markersStyle: { initial: { r: 5, fill: isDark ? '#e9e9e9' : '#111', stroke: isDark ? '#111' : '#ffffff', 'stroke-width': 1 } }
+            markersStyle: {
+              initial: { r: 5, fill: isDark ? '#e9e9e9' : '#111', stroke: isDark ? '#111' : '#ffffff', 'stroke-width': 1 }
+            }
           };
         }
 
@@ -396,7 +483,6 @@
           if (!window.jsVectorMap) return;
           const theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
           const styles = mapStylesFor(theme);
-          // eslint-disable-next-line no-undef
           window.worldMap = new jsVectorMap({
             selector: '#visited-map',
             map: 'world',
@@ -412,7 +498,6 @@
               { name: 'Vatican City', coords: [41.9029, 12.4534] }
             ]
           });
-          // Focus Malta so it is visible
           try { window.worldMap.setFocus({ coordinates: [35.9375, 14.3754], scale: 5, animate: true }); } catch(_) {}
         }
 
@@ -423,7 +508,9 @@
         }
 
         async function initMap(){
-          if (mapReady) return; mapReady = true; await buildMap();
+          if (mapReady) return;
+          mapReady = true;
+          await buildMap();
         }
 
         async function rebuildMap(){
@@ -432,7 +519,6 @@
           await buildMap();
         }
 
-        // Lazy init when Places enters view
         const places = document.getElementById('places');
         if ('IntersectionObserver' in window && places) {
           const once = new IntersectionObserver((entries) => {
@@ -443,7 +529,6 @@
           initMap();
         }
 
-        // --- Self-checks to catch regressions ---
         console.assert(typeof rebuildMap === 'function', 'rebuildMap should be defined');
         console.assert(Array.isArray(visitedCodes) && visitedCodes.includes('MT'), 'visitedCodes must include Malta');
       })();
