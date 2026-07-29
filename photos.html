@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Photos & Places | Daniel Mehta</title>
+    <meta name="description" content="A growing travel photography archive indexed by the places Daniel Mehta has visited.">
+    <link rel="canonical" href="https://daniel-mehta.github.io/photos.html">
+    <meta property="og:title" content="Photos & Places | Daniel Mehta">
+    <meta property="og:description" content="A growing travel photography archive indexed by place.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://daniel-mehta.github.io/photos.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="theme-color" content="#3d4f97">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="stylesheet" href="assets/vendor/jsvectormap.min.css">
+    <link rel="stylesheet" href="assets/site.css">
+    <script src="assets/vendor/jsvectormap.min.js" defer></script>
+    <script src="assets/vendor/world-merc.js" defer></script>
+    <script src="assets/photos.js" defer></script>
+    <script src="assets/site.js" defer></script>
+  </head>
+  <body data-page="photos">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="masthead">
+        <div class="identity plate">
+          <a class="nameplate" href="index.html" aria-label="Daniel Mehta, home">DM</a>
+          <div>
+            <p class="micro-label">PERSONAL WORKSTATION / TORONTO</p>
+            <p class="masthead-name">Daniel Mehta</p>
+          </div>
+          <div class="system-status" aria-label="Photo archive status: ready">
+            <span class="status-light"></span>
+            ARCHIVE READY
+          </div>
+        </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+          <span>MENU</span><span aria-hidden="true">+</span>
+        </button>
+        <nav id="primary-nav" class="primary-nav carbon" aria-label="Primary navigation">
+          <a href="index.html">Overview</a>
+          <a href="index.html#work">Work</a>
+          <a href="index.html#experience">Experience</a>
+          <a class="active" href="photos.html">Photos</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <nav class="secondary-nav" aria-label="Page navigation">
+          <a href="#world-map">World map</a>
+          <a href="#photo-grid">Photo archive</a>
+          <a href="#country-list">Country list</a>
+        </nav>
+      </header>
+
+      <main id="main">
+        <section class="photo-hero plate chamfer">
+          <p class="eyebrow"><span class="status-light"></span> TRAVEL / OBSERVATION / PHOTOGRAPHY</p>
+          <h1>Photo Pak</h1>
+          <p>A visual record of the places I’ve visited, organized by country.</p>
+          <div class="photo-stats" aria-label="Archive statistics">
+            <span><strong>16</strong> countries</span>
+            <span><strong id="photo-total">0</strong> photographs</span>
+            <span><strong id="place-total">0</strong> places indexed</span>
+          </div>
+        </section>
+
+        <section id="world-map" class="module plate">
+          <div class="section-bar"><span>WORLD SELECT</span><span id="map-selection-label">ALL VISITED COUNTRIES</span></div>
+          <div class="photo-map-layout">
+            <div id="photo-map" class="map-canvas large" aria-label="Interactive map used to filter Daniel's travel photographs by country"></div>
+            <aside class="selection-panel carbon">
+              <p class="panel-title">CURRENT SELECTION</p>
+              <p id="selected-country" class="selection-name">All places</p>
+              <p id="selected-count">0 photographs indexed</p>
+              <button id="clear-country" class="button utility" type="button">Clear selection</button>
+            </aside>
+          </div>
+        </section>
+
+        <section id="photo-grid" class="module plate">
+          <div class="section-bar"><span>PHOTO ARCHIVE</span><span id="archive-count">0 RESULTS</span></div>
+          <div id="photo-filters" class="filter-row" aria-label="Filter photographs">
+            <button class="filter-chip active" type="button" data-country="ALL" aria-pressed="true">All <span>0</span></button>
+          </div>
+          <div id="gallery" class="photo-grid"></div>
+          <div id="empty-gallery" class="empty-state">
+            <div class="empty-slots" aria-hidden="true"><span></span><span></span><span></span></div>
+            <p class="eyebrow">ARCHIVE SLOT AVAILABLE</p>
+            <h2>Photographs coming soon.</h2>
+            <p>The map and filing system are ready. New images will appear here with their location, date, caption, and accessible description.</p>
+          </div>
+        </section>
+
+        <section id="country-list" class="module plate">
+          <div class="section-bar"><span>ACCESSIBLE COUNTRY INDEX</span><span>16 ENTRIES</span></div>
+          <p class="index-intro">Use this list as an alternative to the visual map. Countries with photographs will show their current image count.</p>
+          <div id="country-buttons" class="country-grid"></div>
+        </section>
+      </main>
+
+      <footer class="footer carbon">
+        <div>
+          <p class="micro-label">RETURN CHANNEL</p>
+          <h2>Back to the workbench.</h2>
+        </div>
+        <div class="social-links">
+          <a href="index.html"><span class="text-icon" aria-hidden="true">←</span>Overview</a>
+          <a href="mailto:daniel.k.mehta@gmail.com"><img src="assets/icons/mail.svg" alt="">Email</a>
+          <a href="https://github.com/daniel-mehta" target="_blank" rel="noopener"><img src="assets/icons/github.svg" alt="">GitHub</a>
+          <a href="https://letterboxd.com/danielmehta/" target="_blank" rel="noopener"><img src="assets/icons/letterboxd.svg" alt="">Letterboxd</a>
+        </div>
+        <p class="footer-note">© <span data-current-year>2026</span> Daniel Mehta</p>
+      </footer>
+    </div>
+  </body>
+</html>
