@@ -295,8 +295,8 @@ window.PHOTO_MANIFEST = [
   },
   {
     src: "assets/photos/web/Portugal/IMG_8674.webp",
-    alt: "Maritime flags and keepsakes covering the walls of a harbour cafe",
-    caption: "Sailors leave a mark",
+    alt: "A Maltese Cross among sailors' flags and keepsakes covering the walls of a harbour cafe",
+    caption: "A Maltese Cross among sailors’ flags",
     countryCode: "PT",
     location: "Azores, Portugal",
     date: "2018-07-03",
