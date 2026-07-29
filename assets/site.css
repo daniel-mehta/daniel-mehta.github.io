@@ -238,7 +238,10 @@ main { display: grid; gap: 12px; margin-top: 12px; }
 .button:active { transform: translateY(2px); box-shadow: inset 1px 1px 0 rgba(0,0,0,.2), 0 1px 0 #96550e; }
 .signal { color: white; background: var(--signal); }
 .utility { background: var(--amber); }
-.hero-console { padding: 15px; }
+.hero-console {
+  padding: 15px;
+  box-shadow: inset 0 1px 0 #4f566b, inset 0 -2px 0 #090b10, 4px 4px 0 #10131b;
+}
 .profile-readout { margin: 12px 0 0; }
 .profile-readout div { padding: 10px 2px; border-top: 1px dotted #747b91; }
 .profile-readout dt { color: var(--nav-gold); font-size: 10px; font-weight: 700; letter-spacing: .08em; }
@@ -371,6 +374,9 @@ main { display: grid; gap: 12px; margin-top: 12px; }
 .country-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
 .country-button { min-height: 46px; padding: 8px 10px; display: flex; align-items: center; justify-content: space-between; gap: 8px; text-align: left; background: var(--platinum); border: 1px solid #6a73a1; color: var(--ink); font-size: 11px; font-weight: 700; cursor: pointer; }
 .country-button:hover, .country-button.active { color: white; background: var(--chrome); }
+.country-button.is-empty { opacity: .4; }
+.country-button.is-empty:hover { opacity: .72; }
+.country-button.is-empty.active { opacity: 1; }
 .country-button span { color: var(--chrome); padding: 2px 5px; background: var(--canvas-soft); border: 1px solid #6a73a1; }
 .country-button.active span { color: var(--ink); }
 [hidden] { display: none !important; }

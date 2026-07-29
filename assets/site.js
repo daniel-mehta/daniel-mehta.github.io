@@ -158,14 +158,16 @@
     }
 
     VISITED.forEach((country) => {
-      if (countFor(country.code) > 0) filters.appendChild(createFilter(country));
+      const photoCount = countFor(country.code);
+      if (photoCount > 0) filters.appendChild(createFilter(country));
 
       const button = document.createElement("button");
       button.type = "button";
       button.className = "country-button";
+      if (photoCount === 0) button.classList.add("is-empty");
       button.dataset.country = country.code;
-      button.innerHTML = `${country.name} <span>${countFor(country.code)}</span>`;
-      button.setAttribute("aria-label", `${country.name}: ${countFor(country.code)} photographs`);
+      button.innerHTML = `${country.name} <span>${photoCount}</span>`;
+      button.setAttribute("aria-label", `${country.name}: ${photoCount} photographs`);
       button.addEventListener("click", () => selectCountry(country.code));
       countryButtons.appendChild(button);
     });
