@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Writing Log | Daniel Mehta</title>
+    <meta name="description" content="Writing and notes from Daniel Mehta on software, data, machine learning, and the work around them.">
+    <link rel="canonical" href="https://danielmehta.com/blog.html">
+    <meta property="og:title" content="Writing Log | Daniel Mehta">
+    <meta property="og:description" content="Writing and notes on software, data, machine learning, and the work around them.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danielmehta.com/blog.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="theme-color" content="#3d4f97">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="stylesheet" href="assets/site.css">
+    <script src="assets/blog-posts.js" defer></script>
+    <script src="assets/site.js" defer></script>
+    <script src="assets/blog.js" defer></script>
+  </head>
+  <body data-page="blog">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="masthead">
+        <div class="identity plate">
+          <a class="nameplate" href="index.html" aria-label="Daniel Mehta, home">DM</a>
+          <div>
+            <p class="micro-label">PERSONAL WORKSTATION / TORONTO</p>
+            <p class="masthead-name">Daniel Mehta</p>
+          </div>
+        </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span>MENU</span><span aria-hidden="true">+</span></button>
+        <nav id="primary-nav" class="primary-nav carbon" aria-label="Primary navigation">
+          <a href="index.html">Overview</a>
+          <a href="index.html#work">Work</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="photos.html">Photos</a>
+          <a class="active" href="blog.html">Blog</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <nav class="secondary-nav" aria-label="Page navigation">
+          <a href="#archive">Writing archive</a>
+          <a href="#archive">Sort entries</a>
+        </nav>
+      </header>
+
+      <main id="main">
+        <section class="blog-hero plate chamfer">
+          <p class="eyebrow"><span class="status-light"></span> NOTES / IDEAS / WORKING LOG</p>
+          <h1>Writing Log</h1>
+          <p>Notes on software, data, machine learning, and other things I find interesting.</p>
+        </section>
+
+        <section id="archive" class="module plate" aria-labelledby="archive-title">
+          <div class="section-bar"><span id="archive-title">WRITING ARCHIVE</span><span id="blog-count">0 ENTRIES</span></div>
+          <div class="blog-toolbar">
+            <p class="micro-label">SELECT AN ENTRY TO OPEN THE FULL LOG</p>
+            <label for="blog-sort">Sort <select id="blog-sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></label>
+          </div>
+          <div id="blog-grid" class="blog-grid"></div>
+          <div id="blog-empty" class="empty-state blog-empty">
+            <div class="empty-slots" aria-hidden="true"><span></span><span></span><span></span></div>
+            <h2>Log is standing by.</h2>
+            <p>Add a Markdown file to <code>blog/</code>, then run <code>python3 scripts/build_blog.py</code> to publish the first entry.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer id="contact" class="footer carbon">
+        <div><p class="micro-label">OPEN CHANNEL</p><h2>Let’s build something useful.</h2></div>
+        <div class="social-links">
+          <a href="mailto:daniel.k.mehta@gmail.com"><img src="assets/icons/mail.svg" alt="">Email</a>
+          <a href="https://linkedin.com/in/dan-mehta" target="_blank" rel="noopener"><img src="assets/icons/linkedin.svg" alt="">LinkedIn</a>
+          <a href="https://github.com/daniel-mehta" target="_blank" rel="noopener"><img src="assets/icons/github.svg" alt="">GitHub</a>
+          <a href="https://letterboxd.com/danielmehta/" target="_blank" rel="noopener"><img src="assets/icons/letterboxd.svg" alt="">Letterboxd</a>
+        </div>
+        <p class="footer-note">© <span data-current-year>2026</span> Daniel Mehta</p>
+      </footer>
+    </div>
+
+    <div id="blog-overlay" class="blog-overlay" hidden>
+      <section class="blog-reader" role="dialog" aria-modal="true" aria-labelledby="blog-reader-title" aria-describedby="blog-reader-date">
+        <header id="blog-reader-head" class="blog-reader-head"><p>ENTRY READER</p><button id="blog-close" class="blog-close" type="button" aria-label="Close entry">×</button></header>
+        <div class="blog-reader-scroll" tabindex="-1">
+          <h1 id="blog-reader-title"></h1>
+          <p id="blog-reader-date" class="blog-reader-date"></p>
+          <article id="blog-reader-content" class="blog-content"></article>
+        </div>
+        <div id="blog-resize-handle" class="blog-resize-handle" aria-hidden="true"></div>
+      </section>
+    </div>
+  </body>
+</html>
