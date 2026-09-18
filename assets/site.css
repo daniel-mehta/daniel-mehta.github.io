@@ -238,6 +238,8 @@ main { display: grid; gap: 12px; margin-top: 12px; }
 .button:active { transform: translateY(2px); box-shadow: inset 1px 1px 0 rgba(0,0,0,.2), 0 1px 0 #96550e; }
 .signal { color: white; background: var(--signal); }
 .utility { background: var(--amber); }
+.action-row .contact-email { letter-spacing: 0; text-transform: none; cursor: default; }
+.action-row .contact-email img { width: 16px; height: 16px; }
 .hero-console {
   padding: 15px;
   box-shadow: inset 0 1px 0 #4f566b, inset 0 -2px 0 #090b10, 4px 4px 0 #10131b;
