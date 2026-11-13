@@ -139,6 +139,10 @@
     const clearButton = document.getElementById("clear-country");
     const total = document.getElementById("photo-total");
     const placeTotal = document.getElementById("place-total");
+    const viewer = document.getElementById("photo-viewer");
+    const viewerImage = document.getElementById("photo-viewer-image");
+    const viewerCaption = document.getElementById("photo-viewer-caption");
+    const viewerClose = document.getElementById("photo-viewer-close");
     let activeCode = "ALL";
 
     total.textContent = String(photos.length);
@@ -188,6 +192,19 @@
         image.replaceWith(error);
       }, { once: true });
 
+      const openButton = document.createElement("button");
+      openButton.type = "button";
+      openButton.className = "photo-open";
+      openButton.setAttribute("aria-label", `Enlarge photo: ${photo.alt}`);
+      openButton.appendChild(image);
+      openButton.addEventListener("click", () => {
+        viewerImage.src = photo.src;
+        viewerImage.alt = photo.alt;
+        viewerCaption.textContent = [photo.caption, photo.location, photo.date].filter(Boolean).join(" · ");
+        viewer.showModal();
+        viewerClose.focus();
+      });
+
       const caption = document.createElement("figcaption");
       const heading = document.createElement("h2");
       heading.textContent = photo.location || countryByCode[photo.countryCode].name;
@@ -205,7 +222,7 @@
         caption.appendChild(date);
       }
 
-      figure.append(image, caption);
+      figure.append(openButton, caption);
       return figure;
     }
 
@@ -243,6 +260,11 @@
     }
 
     clearButton.addEventListener("click", () => selectCountry("ALL"));
+    filters.querySelector('[data-country="ALL"]').addEventListener("click", () => selectCountry("ALL"));
+    viewerClose.addEventListener("click", () => viewer.close());
+    viewer.addEventListener("click", (event) => {
+      if (event.target === viewer) viewer.close();
+    });
     createMap("#photo-map", selectCountry);
 
     const requested = new URLSearchParams(window.location.search).get("country");

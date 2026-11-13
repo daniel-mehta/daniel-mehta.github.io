@@ -362,6 +362,15 @@ main { display: grid; gap: 12px; margin-top: 12px; }
 .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 8px; }
 .photo-card { margin: 0; background: var(--platinum); border: 1px solid var(--chrome); }
 .photo-card img { width: 100%; aspect-ratio: 4 / 3; display: block; object-fit: cover; background: var(--canvas-soft); }
+.photo-open { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.photo-open:focus-visible { outline: 3px solid var(--signal); outline-offset: -3px; }
+.photo-viewer { width: min(1000px, calc(100% - 24px)); max-width: none; max-height: calc(100% - 24px); padding: 0; color: var(--ink); background: var(--platinum); border: 2px solid var(--chrome); box-shadow: 7px 7px 0 #151a2d; }
+.photo-viewer::backdrop { background: rgba(14,18,37,.75); }
+.photo-viewer-head { padding: 12px 14px; display: flex; align-items: center; justify-content: space-between; gap: 14px; color: var(--nav-gold); background: var(--carbon); }
+.photo-viewer-head p { margin: 0; font-size: 10px; font-weight: 700; letter-spacing: .08em; }
+.photo-viewer figure { margin: 0; padding: 12px; }
+.photo-viewer img { display: block; width: 100%; max-height: calc(100vh - 160px); object-fit: contain; }
+.photo-viewer figcaption { padding: 10px 0 0; font-size: 13px; }
 .photo-card figcaption { padding: 10px; }
 .photo-card h2 { margin: 0; font-size: 14px; }
 .photo-card p { margin: 4px 0 0; font-size: 12px; }
