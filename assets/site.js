@@ -75,7 +75,7 @@
       { code: "VA", name: "Vatican City", coords: [41.9029, 12.4534] }
     ];
 
-    return new window.jsVectorMap({
+    const map = new window.jsVectorMap({
       selector,
       map: "world_merc",
       backgroundColor: "transparent",
@@ -110,6 +110,12 @@
         if (marker) onSelect(marker.code);
       }
     });
+    if (typeof ResizeObserver === "function") {
+      new ResizeObserver(() => map.updateSize()).observe(element);
+    } else {
+      window.addEventListener("resize", () => map.updateSize());
+    }
+    return map;
   }
 
   function setupHomeMap() {

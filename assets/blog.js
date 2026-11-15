@@ -55,12 +55,14 @@
   }
 
   function positionWindow(rect) {
+    const width = Math.min(rect.width, Math.max(0, window.innerWidth - 14));
+    const height = Math.min(rect.height, Math.max(0, window.innerHeight - 14));
     reader.style.inset = "auto";
     reader.style.margin = "0";
-    reader.style.left = `${clamp(rect.left, 7, window.innerWidth - rect.width - 7)}px`;
-    reader.style.top = `${clamp(rect.top, 7, window.innerHeight - rect.height - 7)}px`;
-    reader.style.width = `${rect.width}px`;
-    reader.style.height = `${rect.height}px`;
+    reader.style.left = `${clamp(rect.left, 7, window.innerWidth - width - 7)}px`;
+    reader.style.top = `${clamp(rect.top, 7, window.innerHeight - height - 7)}px`;
+    reader.style.width = `${width}px`;
+    reader.style.height = `${height}px`;
   }
 
   function beginPointerAction(event, mode) {
