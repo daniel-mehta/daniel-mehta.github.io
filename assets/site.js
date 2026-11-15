@@ -70,6 +70,10 @@
   function createMap(selector, onSelect) {
     const element = document.querySelector(selector);
     if (!element || typeof window.jsVectorMap !== "function") return null;
+    const markers = [
+      { code: "MT", name: "Malta", coords: [35.9375, 14.3754] },
+      { code: "VA", name: "Vatican City", coords: [41.9029, 12.4534] }
+    ];
 
     return new window.jsVectorMap({
       selector,
@@ -86,10 +90,7 @@
         selected: { fill: "#3d4f97" },
         selectedHover: { fill: "#f68d1f", cursor: "pointer" }
       },
-      markers: [
-        { name: "Malta", coords: [35.9375, 14.3754] },
-        { name: "Vatican City", coords: [41.9029, 12.4534] }
-      ],
+      markers,
       markerStyle: {
         initial: { fill: "#f68d1f", stroke: "#ffffff", strokeWidth: 1, r: 5 },
         hover: { fill: "#ecab37", stroke: "#21242e", r: 6 }
@@ -105,8 +106,8 @@
         onSelect(code);
       },
       onMarkerClick(event, index) {
-        const code = index === 0 ? "MT" : "VA";
-        onSelect(code);
+        const marker = markers[index];
+        if (marker) onSelect(marker.code);
       }
     });
   }
